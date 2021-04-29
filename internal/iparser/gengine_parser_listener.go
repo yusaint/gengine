@@ -3,11 +3,12 @@ package iparser
 import (
 	"errors"
 	"fmt"
-	"github.com/bilibili/gengine/internal/base"
-	parser "github.com/bilibili/gengine/internal/iantlr/alr"
 	"reflect"
 	"strconv"
 	"strings"
+
+	"github.com/bilibili/gengine/internal/base"
+	parser "github.com/bilibili/gengine/internal/iantlr/alr"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 	"github.com/golang-collections/collections/stack"
@@ -298,7 +299,7 @@ func (g *GengineParserListener) EnterThreeLevelCall(ctx *parser.ThreeLevelCallCo
 		return
 	}
 	threeLevelCall := &base.ThreeLevelCall{
-		ThreeLevel : ctx.DOUBLEDOTTEDNAME().GetText(),
+		ThreeLevel: ctx.DOUBLEDOTTEDNAME().GetText(),
 	}
 	g.Stack.Push(threeLevelCall)
 }
@@ -508,6 +509,10 @@ func (g *GengineParserListener) ExitRealLiteral(ctx *parser.RealLiteralContext) 
 	}
 	cons.ConstantValue = reflect.ValueOf(flo)
 }
+
+func (s *GengineParserListener) EnterDeferStmt(ctx *parser.DeferStmtContext) {}
+
+func (s *GengineParserListener) ExitDeferStmt(ctx *parser.DeferStmtContext) {}
 
 func (g *GengineParserListener) EnterIfStmt(ctx *parser.IfStmtContext) {
 	if len(g.ParseErrors) > 0 {

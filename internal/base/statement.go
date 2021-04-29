@@ -7,6 +7,7 @@ import (
 )
 
 type Statement struct {
+	DeferStmt      *DeferStmt
 	IfStmt         *IfStmt
 	MethodCall     *MethodCall
 	FunctionCall   *FunctionCall
@@ -16,6 +17,10 @@ type Statement struct {
 }
 
 func (s *Statement) Evaluate(dc *context.DataContext, Vars map[string]reflect.Value) (reflect.Value, error, bool) {
+
+	if s.DeferStmt != nil {
+		defer s.DeferStmt.Evaluate(dc, Vars)
+	}
 
 	if s.IfStmt != nil {
 		return s.IfStmt.Evaluate(dc, Vars)

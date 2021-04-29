@@ -1,4 +1,4 @@
-// Code generated from /Users/renyunyi/go_project/github.com/bilibili/gengine/internal/iantlr/gengine.g4 by ANTLR 4.9. DO NOT EDIT.
+// Generated from gengine.g4 by ANTLR 4.7.
 
 package parser // gengine
 
@@ -104,6 +104,12 @@ func (s *BasegengineListener) EnterReturnStmt(ctx *ReturnStmtContext) {}
 
 // ExitReturnStmt is called when production returnStmt is exited.
 func (s *BasegengineListener) ExitReturnStmt(ctx *ReturnStmtContext) {}
+
+// EnterDeferStmt is called when production deferStmt is entered.
+func (s *BasegengineListener) EnterDeferStmt(ctx *DeferStmtContext) {}
+
+// ExitDeferStmt is called when production deferStmt is exited.
+func (s *BasegengineListener) ExitDeferStmt(ctx *DeferStmtContext) {}
 
 // EnterIfStmt is called when production ifStmt is entered.
 func (s *BasegengineListener) EnterIfStmt(ctx *IfStmtContext) {}

@@ -9,7 +9,7 @@ salience : SALIENCE integer;
 ruleContent : statements;
 statements: statement* returnStmt? ;
 
-statement : ifStmt | functionCall | methodCall  | threeLevelCall | assignment | concStatement ;
+statement : deferStmt | ifStmt | functionCall | methodCall  | threeLevelCall | assignment | concStatement ;
 
 concStatement : CONC LR_BRACE ( functionCall | methodCall | threeLevelCall | assignment )* RR_BRACE;
 
@@ -38,6 +38,9 @@ expressionAtom
 assignment : (mapVar | variable) assignOperator (mathExpression| expression);
 
 returnStmt : RETURN expression?;
+
+
+deferStmt : DEFER functionCall | methodCall;
 
 ifStmt : IF expression LR_BRACE statements RR_BRACE elseIfStmt*  elseStmt? ;
 
@@ -140,6 +143,8 @@ NULL_LITERAL                : N U L L ;
 SALIENCE                    : S A L I E N C E ;
 BEGIN                       : B E G I N;
 END                         : E N D;
+
+DEFER                       : D E F E R;
 
 SIMPLENAME :  ('a'..'z' |'A'..'Z'| '_')+ ( ('0'..'9') | ('a'..'z' |'A'..'Z') | '_' )* ;
 

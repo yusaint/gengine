@@ -1,4 +1,4 @@
-// Code generated from /Users/renyunyi/go_project/github.com/bilibili/gengine/internal/iantlr/gengine.g4 by ANTLR 4.9. DO NOT EDIT.
+// Generated from gengine.g4 by ANTLR 4.7.
 
 package parser // gengine
 
@@ -49,6 +49,9 @@ type gengineListener interface {
 
 	// EnterReturnStmt is called when entering the returnStmt production.
 	EnterReturnStmt(c *ReturnStmtContext)
+
+	// EnterDeferStmt is called when entering the deferStmt production.
+	EnterDeferStmt(c *DeferStmtContext)
 
 	// EnterIfStmt is called when entering the ifStmt production.
 	EnterIfStmt(c *IfStmtContext)
@@ -163,6 +166,9 @@ type gengineListener interface {
 
 	// ExitReturnStmt is called when exiting the returnStmt production.
 	ExitReturnStmt(c *ReturnStmtContext)
+
+	// ExitDeferStmt is called when exiting the deferStmt production.
+	ExitDeferStmt(c *DeferStmtContext)
 
 	// ExitIfStmt is called when exiting the ifStmt production.
 	ExitIfStmt(c *IfStmtContext)
