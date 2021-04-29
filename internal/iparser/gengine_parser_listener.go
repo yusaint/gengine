@@ -510,9 +510,22 @@ func (g *GengineParserListener) ExitRealLiteral(ctx *parser.RealLiteralContext) 
 	cons.ConstantValue = reflect.ValueOf(flo)
 }
 
-func (s *GengineParserListener) EnterDeferStmt(ctx *parser.DeferStmtContext) {}
+func (s *GengineParserListener) EnterDeferStmt(ctx *parser.DeferStmtContext) {
+	if len(g.ParseErrors) > 0 {
+		return
+	}
+	deferStmt := &base.DeferStm{}
+	g.Stack.Push(deferStmt)
+}
 
-func (s *GengineParserListener) ExitDeferStmt(ctx *parser.DeferStmtContext) {}
+func (s *GengineParserListener) ExitDeferStmt(ctx *parser.DeferStmtContext) {
+	if len(g.ParseErrors) > 0 {
+		return
+	}
+	deferStmt := g.Stack.Pop().(*base.DeferStmt)
+	statement := g.Stack.Peek().(*base.Statement)
+	statement.DeferStmt = deferStmt
+}
 
 func (g *GengineParserListener) EnterIfStmt(ctx *parser.IfStmtContext) {
 	if len(g.ParseErrors) > 0 {
