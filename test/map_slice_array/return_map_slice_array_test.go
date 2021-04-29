@@ -1,10 +1,11 @@
 package map_slice_array
 
 import (
-	"github.com/bilibili/gengine/builder"
-	"github.com/bilibili/gengine/context"
-	"github.com/bilibili/gengine/engine"
 	"testing"
+
+	"github.com/yusaint/gengine/builder"
+	"github.com/yusaint/gengine/context"
+	"github.com/yusaint/gengine/engine"
 )
 
 const return_asm_rule string = `

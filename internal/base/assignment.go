@@ -3,11 +3,12 @@ package base
 import (
 	"errors"
 	"fmt"
-	"github.com/bilibili/gengine/context"
-	"github.com/bilibili/gengine/internal/core"
 	"reflect"
 	"runtime"
 	"strings"
+
+	"github.com/yusaint/gengine/context"
+	"github.com/yusaint/gengine/internal/core"
 )
 
 // := or =

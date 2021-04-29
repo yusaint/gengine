@@ -3,15 +3,16 @@ package builder
 import (
 	"errors"
 	"fmt"
-	"github.com/antlr/antlr4/runtime/Go/antlr"
-	"github.com/bilibili/gengine/context"
-	"github.com/bilibili/gengine/internal/base"
-	parser "github.com/bilibili/gengine/internal/iantlr/alr"
-	"github.com/bilibili/gengine/internal/iparser"
-	"github.com/bilibili/gengine/internal/tool"
 	"sort"
 	"strings"
 	"sync"
+
+	"github.com/antlr/antlr4/runtime/Go/antlr"
+	"github.com/yusaint/gengine/context"
+	"github.com/yusaint/gengine/internal/base"
+	parser "github.com/yusaint/gengine/internal/iantlr/alr"
+	"github.com/yusaint/gengine/internal/iparser"
+	"github.com/yusaint/gengine/internal/tool"
 )
 
 type RuleBuilder struct {

@@ -3,14 +3,15 @@ package test
 import (
 	"bytes"
 	"fmt"
-	"github.com/bilibili/gengine/builder"
-	"github.com/bilibili/gengine/context"
-	"github.com/bilibili/gengine/engine"
 	"io/ioutil"
 	"strconv"
 	"strings"
 	"testing"
 	"time"
+
+	"github.com/yusaint/gengine/builder"
+	"github.com/yusaint/gengine/context"
+	"github.com/yusaint/gengine/engine"
 )
 
 const rule1 = `

@@ -2,9 +2,10 @@ package test
 
 import (
 	"fmt"
-	"github.com/bilibili/gengine/engine"
 	"testing"
 	"time"
+
+	"github.com/yusaint/gengine/engine"
 )
 
 func random() int {
