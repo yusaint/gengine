@@ -21,6 +21,7 @@ func (s *Statement) Evaluate(dc *context.DataContext, Vars map[string]reflect.Va
 
 	if s.DeferStmt != nil {
 		defer s.DeferStmt.Evaluate(dc, Vars)
+		return reflect.ValueOf(nil), nil, false
 	}
 
 	if s.IfStmt != nil {
